@@ -20,16 +20,3 @@ spec:
         image: nginx:1.14.2
         ports:
         - containerPort: 80
-        volumes:
-          - name: scratch-volume
-            ephemeral:
-              volumeClaimTemplate:
-                metadata:
-                  labels:
-                    type: nginx-volume
-                spec:
-                  accessModes: [ "ReadWriteOnce" ]
-                  storageClassName: "scratch-storage-class"
-                  resources:
-                    requests:
-                      storage: 10Mi
